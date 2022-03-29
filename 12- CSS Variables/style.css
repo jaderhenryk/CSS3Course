@@ -1,0 +1,34 @@
+/* CSS variables (or custom properties) must be declared within 
+    a CSS selector in order to define it's "scope" Here, 
+    the variables are within the .sandbox selector, therefore, 
+    it's scope is available across all descendants of that selector.
+    If you wanted a global variable across the entire web page, 
+    you could use the "body" or ":root" selector. 
+*/
+
+.sandbox {
+    --primary-color: orangered;
+    --secondary-color: hotpink;
+    --base-measurement: 20px;
+}
+
+/* Access the variable by using the var() function */
+.sandbox .box {
+    text-align: center;
+
+    /* This variable is local to the ".sandbox .box" selector */
+    --text-color: #f3f3f3;
+    color: var(--text-color);
+
+    background: var(--primary-color);
+    margin:     var(--base-measurement);
+
+    /* You can do math by including the calc() function! */
+    height:      calc( var(--base-measurement) * 10 );
+    width:       calc( var(--base-measurement) * 10 );
+    line-height: calc( var(--base-measurement) * 10 );
+}
+
+.sandbox .box2 {
+    background: var(--secondary-color);
+}
