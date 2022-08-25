@@ -1,0 +1,91 @@
+/* =========================
+   FLEXBOX LAYOUTS #1
+   ========================= */
+.layout-1 main {
+  display: flex;
+  flex-direction: row;
+}
+.layout-1 article {
+  flex: 1 58%;
+  margin-right: 2%;
+}
+.layout-1 aside {
+  flex: 1 40%;
+}
+
+/* =========================
+   FLEXBOX LAYOUTS #2
+   ========================= */
+.layout-2 header {
+  display: flex;
+  flex-direction: row;
+}
+.layout-2 header nav {
+  flex: 1;
+  margin-left: 2%;
+}
+.layout-2 main {
+  display: flex;
+  flex-direction: row;
+}
+.layout-2 article {
+  flex: 1 56%;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+.layout-2 aside.sidenav,
+.layout-2 aside.sidebar {
+  flex: 1 20%;
+}
+
+/* =========================
+   FLEXBOX LAYOUTS #3
+   ========================= */
+.layout-3 header {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.layout-3 header nav {
+  flex: 1;
+  margin-right: 2%;
+}
+.layout-3 .articles {
+  display: flex;
+  flex-direction: row;
+}
+.layout-3 article {
+  flex: 1;
+  margin: 0 2%;
+}
+.layout-3 article:first-child,
+.layout-3 article:last-child {
+  margin: 0;
+}
+
+/* =========================
+  SIMPLE MEDIA QUERIES FOR RESPONSIVE LAYOUTS
+  ========================= */
+@media screen and ( max-width : 768px ) {
+  .layout-1 main,
+  .layout-1 article,
+  .layout-1 aside,
+  .layout-2 header,
+  .layout-2 header .logo,
+  .layout-2 header nav,
+  .layout-2 main,
+  .layout-2 article,
+  .layout-2 aside.sidebar,
+  .layout-2 aside.sidenav,
+  .layout-3 main,
+  .layout-3 .articles,
+  .layout-3 article,
+  .layout-3 aside,
+  .layout-3 header,
+  .layout-3 header .logo,
+  .layout-3 header nav {
+    display: block;
+    float: none;
+    width: 100%;
+    margin: 0 0 2%;
+  }
+}
